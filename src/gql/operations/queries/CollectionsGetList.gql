@@ -1,0 +1,8 @@
+query CollectionsGetList($limit: Int, $offset: Int) {
+	collections(limit: $limit, offset: $offset) {
+		items {
+			...CollectionOnList
+		}
+		totalCount
+	}
+}

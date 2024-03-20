@@ -1,0 +1,7 @@
+mutation ReviewCreate($input: ReviewCreateInput!) {
+	reviewCreate(input: $input) {
+		review {
+			...ReviewDetails
+		}
+	}
+}

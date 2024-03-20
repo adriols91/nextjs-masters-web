@@ -1,0 +1,19 @@
+fragment ProductDetails on Product {
+	...ProductOnList
+	description
+	colors {
+		id
+		name
+	}
+	sizes {
+		id
+		name
+	}
+	images(offset: 1) {
+		url
+		alt
+	}
+	reviews(orderBy: [{ createdAt: DESC }]) {
+		...ReviewDetails
+	}
+}

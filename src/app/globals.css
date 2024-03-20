@@ -2,32 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@keyframes slide-from-right {
+	0% {
+		transform: translateX(100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.animation-fade-in {
+	animation: fade-in 0.2s ease-out forwards;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animation-slide-from-right {
+	animation: slide-from-right 0.2s ease-out forwards;
+}
+
+.small-caps {
+	font-variant-caps: small-caps;
+}
+
+.stars-rating label {
+	cursor: pointer;
+}
+
+.stars-rating input:checked ~ label svg,
+.stars-rating input:focus ~ label svg,
+.stars-rating input:hover ~ label svg {
+	fill: currentColor;
+	--tw-text-opacity: 1;
+	color: rgb(251 146 60 / var(--tw-text-opacity));
+	stroke: currentColor;
 }

@@ -1,0 +1,7 @@
+fragment CategoryDetails on Category {
+	...CategoryOnList
+	description
+	products {
+		...ProductOnList
+	}
+}

@@ -1,0 +1,7 @@
+fragment ItemDetails on Item {
+	id
+	product {
+		...ProductOnList
+	}
+	quantity
+}

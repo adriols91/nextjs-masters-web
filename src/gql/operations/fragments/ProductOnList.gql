@@ -1,0 +1,13 @@
+fragment ProductOnList on Product {
+	id
+	name
+	rating
+	categories {
+		name
+	}
+	coverImages: images(limit: 1) {
+		url
+		alt
+	}
+	price
+}

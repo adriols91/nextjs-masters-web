@@ -1,0 +1,5 @@
+query CollectionGetItem($id: ID, $slug: String) {
+	collection(id: $id, slug: $slug) {
+		...CollectionDetails
+	}
+}

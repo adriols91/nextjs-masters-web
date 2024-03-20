@@ -1,0 +1,7 @@
+mutation ItemUpdate($input: ItemUpdateInput!) {
+	itemUpdate(input: $input) {
+		item {
+			...ItemDetails
+		}
+	}
+}

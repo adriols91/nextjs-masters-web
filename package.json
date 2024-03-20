@@ -1,27 +1,54 @@
 {
-  "name": "nextjs-masters",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0"
-  }
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "nextjs-masters",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint --fix --dir src",
+		"codegen": "graphql-codegen --config .graphqlrc.ts"
+	},
+	"dependencies": {
+		"@apollo/client": "^3.9.5",
+		"@apollo/experimental-nextjs-app-support": "^0.8.0",
+		"@clerk/nextjs": "5.0.0-beta.34",
+		"@stripe/react-stripe-js": "^2.6.2",
+		"@stripe/stripe-js": "^3.0.10",
+		"clsx": "^2.1.0",
+		"graphql": "^16.8.1",
+		"lodash.debounce": "^4.0.8",
+		"lucide-react": "^0.331.0",
+		"next": "14.1.0",
+		"nuqs": "^1.17.1",
+		"react": "^18",
+		"react-dom": "^18",
+		"stripe": "^14.21.0",
+		"stripe-event-types": "^3.1.0",
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "5.0.2",
+		"@graphql-codegen/client-preset": "4.2.2",
+		"@next/env": "^14.1.0",
+		"@parcel/watcher": "^2.4.0",
+		"@tailwindcss/typography": "^0.5.10",
+		"@types/lodash.debounce": "^4.0.9",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
+		"autoprefixer": "^10.0.1",
+		"eslint": "^8",
+		"eslint-config-next": "14.1.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"postcss": "^8",
+		"prettier": "^3.2.5",
+		"prettier-plugin-tailwindcss": "^0.5.11",
+		"tailwindcss": "^3.3.0",
+		"typescript": "^5"
+	}
 }

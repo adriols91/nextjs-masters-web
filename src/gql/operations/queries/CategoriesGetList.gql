@@ -1,0 +1,8 @@
+query CategoriesGetList($limit: Int, $offset: Int) {
+	categories(limit: $limit, offset: $offset) {
+		items {
+			...CategoryOnList
+		}
+		totalCount
+	}
+}

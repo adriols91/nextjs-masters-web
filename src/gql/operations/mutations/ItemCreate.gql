@@ -1,0 +1,7 @@
+mutation ItemCreate($input: ItemCreateInput!) {
+	itemCreate(input: $input) {
+		item {
+			...ItemDetails
+		}
+	}
+}

@@ -1,0 +1,5 @@
+query CategoryGetItem($id: ID, $slug: String) {
+	category(id: $id, slug: $slug) {
+		...CategoryDetails
+	}
+}

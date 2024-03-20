@@ -1,0 +1,8 @@
+fragment CategoryOnList on Category {
+	id
+	name
+	slug
+	image {
+		url
+	}
+}

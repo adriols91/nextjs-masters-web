@@ -1,0 +1,5 @@
+query ItemGetUnique($cartId: ID!, $productId: ID!) {
+	item(cartId: $cartId, productId: $productId) {
+		...ItemDetails
+	}
+}
