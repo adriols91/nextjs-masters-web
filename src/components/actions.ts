@@ -12,16 +12,22 @@ import {
 } from '@/gql/services';
 
 import {
+	addItemToCartSchema,
+	type AddItemToCartData,
+} from './ProductDetails/AddItemToCartForm/schema';
+import {
 	reviewSchema,
 	type ReviewFormData,
 } from './ProductDetails/CustomerReviews/ReviewForm/schema';
 
-export const addItemToCart = async (formData: FormData) => {
-	const { productId } = Object.fromEntries(formData);
+export const addItemToCart = async (formData: AddItemToCartData) => {
+	const parsedData = await addItemToCartSchema.parseAsync(formData);
+
+	const { productId } = parsedData;
 
 	const cart = await getOrCreateCart();
 
-	await createOrUpdateItem(cart.id, productId as string);
+	await createOrUpdateItem(cart.id, productId);
 
 	revalidateTag('cart');
 };

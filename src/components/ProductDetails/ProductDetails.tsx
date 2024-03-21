@@ -2,14 +2,14 @@ import { Suspense } from 'react';
 
 import { notFound } from 'next/navigation';
 
-import { Button, CoverImage, LoadingSpinner, Section, Select } from '@/core/ui';
+import { CoverImage, LoadingSpinner, Section } from '@/core/ui';
 import { formatPrice } from '@/core/utils';
 import { getClient } from '@/gql/client';
 import { ProductGetItemDocument } from '@/gql/codegen/graphql';
 
-import { addItemToCart } from '../actions';
-import { getColorsChoices, getProductCoverImageProps, getSizesChoices } from '../helpers';
+import { getProductCoverImageProps } from '../helpers';
 
+import { AddItemToCartForm } from './AddItemToCartForm';
 import { CustomerReviews } from './CustomerReviews';
 import { RelatedProducts } from './RelatedProducts';
 
@@ -40,16 +40,7 @@ export const ProductDetails = async ({ id }: { id: string }) => {
 						</div>
 						<div className="mt-4 text-slate-500">{product.description}</div>
 						<div className="mt-8">
-							<form action={addItemToCart}>
-								<input type="text" name="productId" value={product.id} hidden readOnly />
-								<div className="flex items-center gap-4">
-									<Select label="Color" name="color" options={getColorsChoices(product)} />
-									<Select label="Size" name="size" options={getSizesChoices(product)} />
-								</div>
-								<Button className="py-4" data-testid="add-to-cart-button">
-									Add to cart
-								</Button>
-							</form>
+							<AddItemToCartForm product={product} />
 						</div>
 					</div>
 				</div>

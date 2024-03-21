@@ -1,16 +1,13 @@
 import Image from 'next/image';
 
-import { formatPrice } from '@/core/utils';
+import { formatPrice, getTotalAmount } from '@/core/utils';
 import { getCart } from '@/gql/services';
 
 import { CheckoutButton } from './CheckoutButton';
 
 export const ModalView = async () => {
 	const cart = await getCart();
-	const totalAmount = cart?.items.reduce(
-		(acc, { product, quantity }) => acc + product.price * quantity,
-		0,
-	);
+	const totalAmount = cart ? getTotalAmount(cart) : 0;
 
 	return (
 		<div className="animation-slide-from-right absolute bottom-0 right-0 top-0 z-30 flex h-full flex-col overflow-hidden bg-white shadow-xl sm:w-1/2 lg:w-1/3">

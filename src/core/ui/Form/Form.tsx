@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import type { FormContract } from '@/core/types';
 
@@ -12,18 +12,14 @@ export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
 export const Form = ({ children, state, action, ...props }: FormProps) => {
 	const ref = useRef<HTMLFormElement>(null);
 
-	return (
-		<form
-			{...props}
-			ref={ref}
-			action={(form) => {
-				action(form);
+	useEffect(() => {
+		if (state?.success) {
+			ref.current?.reset();
+		}
+	}, [state]);
 
-				if (state?.success) {
-					ref.current?.reset();
-				}
-			}}
-		>
+	return (
+		<form {...props} ref={ref} action={action}>
 			{children}
 		</form>
 	);
