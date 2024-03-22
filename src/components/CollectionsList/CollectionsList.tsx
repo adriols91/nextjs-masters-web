@@ -16,7 +16,11 @@ export const CollectionsList = async ({
 					{collections.map((collection) => (
 						<div key={collection.id} className="group relative">
 							<div className="sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 relative h-80 w-full overflow-hidden rounded-lg bg-white transition group-hover:scale-110 group-hover:opacity-75 sm:h-64">
-								<CoverImage src={collection.image?.url} alt={collection.name} />
+								<CoverImage
+									src={collection.image?.url}
+									alt={collection.name}
+									sizes="(max-width: 900px) 100vw, 25vw"
+								/>
 							</div>
 							<h3 className="mt-4 text-center font-bold text-slate-700">
 								<Link href={`/collections/${collection.slug}`}>

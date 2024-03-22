@@ -12,7 +12,11 @@ export const CategoriesList = async ({ categories }: { categories: CategoryOnLis
 					{categories.map((category) => (
 						<div key={category.id} className="group relative">
 							<div className="sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 relative h-80 w-full overflow-hidden rounded-lg bg-white transition group-hover:scale-110 group-hover:opacity-75 sm:h-64">
-								<CoverImage src={category.image?.url} alt={category.name} />
+								<CoverImage
+									src={category.image?.url}
+									alt={category.name}
+									sizes="(max-width: 900px) 100vw, 25vw"
+								/>
 							</div>
 							<h3 className="mt-4 text-center font-bold text-slate-700">
 								<Link href={`/categories/${category.slug}`}>

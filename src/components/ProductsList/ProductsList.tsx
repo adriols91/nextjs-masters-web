@@ -18,7 +18,10 @@ export const ProductsList = ({ products }: { products: ProductOnListFragment[] }
 					<li key={product.id} className="h-96 grow">
 						<Link href={`/product/${product.id}`}>
 							<article className="flex h-full flex-col overflow-hidden rounded-lg border shadow-lg">
-								<CoverImage {...getProductCoverImageProps(product)} />
+								<CoverImage
+									{...getProductCoverImageProps(product)}
+									sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 20vw"
+								/>
 								<div className="border-t bg-gradient-to-br from-orange-50 to-orange-300 px-4 py-2">
 									<div className="flex flex-row items-center justify-between">
 										<h3 className="py-2 text-center font-semibold text-slate-600">
