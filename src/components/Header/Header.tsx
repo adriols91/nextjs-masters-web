@@ -48,7 +48,7 @@ export const Header = async () => {
 					</SignedOut>
 				</div>
 			</div>
-			<div className="container mt-auto h-5/6 bg-[url('/header-bg.webp')] bg-cover shadow-xl xl:rounded-t-lg">
+			<div className="container mt-auto h-5/6 bg-[url('/header-bg.webp')] bg-cover bg-[center_left_25%] shadow-xl xl:rounded-t-lg">
 				<Navigation
 					menuItems={[
 						{ label: 'Home', href: '/' },
