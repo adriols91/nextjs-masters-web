@@ -1,0 +1,13 @@
+query ProductsGetIds(
+	$limit: Int
+	$offset: Int
+	$filter: ProductFilterInput
+	$orderBy: [ProductsOrderByInput!]
+) {
+	products(limit: $limit, offset: $offset, filter: $filter, orderBy: $orderBy) {
+		items {
+			id
+		}
+		totalCount
+	}
+}

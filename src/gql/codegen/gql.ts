@@ -35,6 +35,7 @@ const documents = {
     "query CollectionsGetList($limit: Int, $offset: Int) {\n  collections(limit: $limit, offset: $offset) {\n    items {\n      ...CollectionOnList\n    }\n    totalCount\n  }\n}": types.CollectionsGetListDocument,
     "query ItemGetUnique($cartId: ID!, $productId: ID!) {\n  item(cartId: $cartId, productId: $productId) {\n    ...ItemDetails\n  }\n}": types.ItemGetUniqueDocument,
     "query ProductGetItem($id: ID!) {\n  product(id: $id) {\n    ...ProductDetails\n  }\n}": types.ProductGetItemDocument,
+    "query ProductsGetIds($limit: Int, $offset: Int, $filter: ProductFilterInput, $orderBy: [ProductsOrderByInput!]) {\n  products(limit: $limit, offset: $offset, filter: $filter, orderBy: $orderBy) {\n    items {\n      id\n    }\n    totalCount\n  }\n}": types.ProductsGetIdsDocument,
     "query ProductsGetList($limit: Int, $offset: Int, $filter: ProductFilterInput, $orderBy: [ProductsOrderByInput!]) {\n  products(limit: $limit, offset: $offset, filter: $filter, orderBy: $orderBy) {\n    items {\n      ...ProductOnList\n    }\n    totalCount\n  }\n}": types.ProductsGetListDocument,
 };
 
@@ -140,6 +141,10 @@ export function graphql(source: "query ItemGetUnique($cartId: ID!, $productId: I
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "query ProductGetItem($id: ID!) {\n  product(id: $id) {\n    ...ProductDetails\n  }\n}"): (typeof documents)["query ProductGetItem($id: ID!) {\n  product(id: $id) {\n    ...ProductDetails\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query ProductsGetIds($limit: Int, $offset: Int, $filter: ProductFilterInput, $orderBy: [ProductsOrderByInput!]) {\n  products(limit: $limit, offset: $offset, filter: $filter, orderBy: $orderBy) {\n    items {\n      id\n    }\n    totalCount\n  }\n}"): (typeof documents)["query ProductsGetIds($limit: Int, $offset: Int, $filter: ProductFilterInput, $orderBy: [ProductsOrderByInput!]) {\n  products(limit: $limit, offset: $offset, filter: $filter, orderBy: $orderBy) {\n    items {\n      id\n    }\n    totalCount\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -4,7 +4,7 @@ import { Link } from '@/core/ui';
 export const Navigation = <T extends string>({ menuItems }: { menuItems: MenuItem<T>[] }) => {
 	return (
 		<nav className="flex lg:ml-8">
-			<ul className="flex w-full gap-5 py-5">
+			<ul className="flex w-full gap-2 py-5 text-sm sm:gap-5 sm:text-base">
 				{menuItems.map((item) => (
 					<li key={item.label}>
 						<Link

@@ -16,7 +16,7 @@ export const Header = async () => {
 			<div className="container m-auto flex h-16 items-center justify-between gap-2 px-0 py-2">
 				<Link
 					href="/"
-					className="whitespace-nowrap px-3 text-sm font-bold text-orange-200 hover:text-orange-300 md:text-2xl xl:px-0"
+					className="px-3 text-center text-sm font-bold text-orange-200 hover:text-orange-300 sm:whitespace-nowrap md:text-2xl xl:px-0"
 					activeClassName=""
 				>
 					Next.js Masters
@@ -37,7 +37,9 @@ export const Header = async () => {
 						</div>
 					</Link>
 					<SignedIn>
-						<UserButton />
+						<div className="pr-2 xl:pr-0">
+							<UserButton />
+						</div>
 					</SignedIn>
 					<SignedOut>
 						<div className="whitespace-nowrap pr-2 text-orange-100 hover:text-orange-200 xl:pr-0">

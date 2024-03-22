@@ -16,6 +16,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
 	title: 'Next.js masters',
 	description: 'Next.js masters app',
+	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
 };
 
 const RootLayout = async ({
@@ -28,7 +29,7 @@ const RootLayout = async ({
 	return (
 		<ClerkProvider>
 			<html lang="pl">
-				<body className={clsx(inter.className, 'min-w-[375px]')}>
+				<body className={clsx(inter.className, 'min-w-[320px]')}>
 					<Providers>
 						<Header />
 						<div className="container mb-16 min-h-[50vh] rounded-b-lg border border-t-0 shadow-xl">

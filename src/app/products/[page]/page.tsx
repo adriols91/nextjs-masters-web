@@ -12,6 +12,10 @@ const INITIAL_ORDER_BY: OrderByParam = {
 	direction: Sort.Desc,
 };
 
+export const generateStaticParams = () => {
+	return Array.from({ length: 3 }, (_, i) => ({ page: (i + 1).toString() }));
+};
+
 const ProductsPage = async ({
 	params: { page },
 	searchParams: { orderBy },
